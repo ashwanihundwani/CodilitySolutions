@@ -478,6 +478,7 @@ public func solution(_ A : inout [Int], _ B : inout [Int]) -> Int {
     return totalSwaps
 }
 
+<<<<<<< Updated upstream
 var A = [5, 3, 7, 7, 10]
 var B = [1, 6, 6, 9, 9]
 
@@ -486,7 +487,76 @@ print(solution(&A, &B))
 
 print(A)
 print(B)
+=======
+// Length of the longest substring without repeating characters (NRCS)
 
+public func NRCS(string:String) -> Int {
+    
+    if string.isEmpty {
+        return 0
+    }
+    
+    var visited:Dictionary<Character, Int?> = Dictionary<Character, Int?>()
+    visited[string.first!] = 0
+    var currentLength = 1
+    var maxLength = 0
+    let strIndex = string.index(string.startIndex, offsetBy: 1)
+    var currentSubstr:String = string.substring(to: strIndex)
+    var longest:String = ""
+    var index = 1
+    var tempString = string
+    tempString.remove(at: string.startIndex)
+ // "ello, World"
+    for char in tempString.characters {
+        
+        var previousIndex = -1
+        if let temp = visited[char] {
+            previousIndex = temp!
+        }
+        
+        if previousIndex == -1 ||  index - currentLength > previousIndex {
+            currentLength += 1
+            currentSubstr.append(char)
+        }
+        else {
+            if maxLength < currentLength {
+                maxLength = currentLength
+                longest = currentSubstr
+            }
+            currentSubstr = String(char)
+            currentLength = index - previousIndex
+        }
+        visited[char] = index
+        
+        index += 1
+    }
+    
+    if maxLength < currentLength {
+        maxLength = currentLength
+        longest = currentSubstr
+    }
+    
+    print(longest)
+    return maxLength
+    
+}
 
+//
+//var C:[Int] = [9, 1, 4, 9, 0, 4, 8, 9, 0, 1]
+//print(NRCS(string: "aab"))
+//
+//var string12 = "test 5 a0A pass007 ?xy1"
+//var arr = [1,3,2,1,2, 1, 5 ,3, 3,4,2]
+//print(FloodDepth.solution(&arr))
+
+>>>>>>> Stashed changes
+
+print(TennisCourt.solution(3, 3))
+var C = [1]
+var D = [3,2,5,5]
+print(Socks.solution(2, &C, &D))
+
+var AA = [2, 3, 2, 3, 2, 3, 2, 3]
+print(RectangleBuilderGreaterArea.solution(&AA, 9))
 
 
