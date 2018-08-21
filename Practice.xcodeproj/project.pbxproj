@@ -36,6 +36,8 @@
 		4DCBFE12211F0A410031EFE7 /* PerimeterRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCBFE11211F0A410031EFE7 /* PerimeterRectangle.swift */; };
 		4DCBFE14211F13050031EFE7 /* Peaks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCBFE13211F13050031EFE7 /* Peaks.swift */; };
 		4DF84428210B955D004AF932 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF84427210B955D004AF932 /* main.swift */; };
+		DFB81AEB21229A0A0039AA9D /* CitiesAndRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB81AEA21229A0A0039AA9D /* CitiesAndRoutes.swift */; };
+		DFB81AED21229C700039AA9D /* FlipCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB81AEC21229C700039AA9D /* FlipCards.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -81,6 +83,8 @@
 		4DCBFE13211F13050031EFE7 /* Peaks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Peaks.swift; sourceTree = "<group>"; };
 		4DF84424210B955D004AF932 /* Practice */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Practice; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DF84427210B955D004AF932 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		DFB81AEA21229A0A0039AA9D /* CitiesAndRoutes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesAndRoutes.swift; sourceTree = "<group>"; };
+		DFB81AEC21229C700039AA9D /* FlipCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipCards.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +132,7 @@
 				4D904D3C2115985A00D4384D /* MissingPositiveInteger.swift */,
 				4D904D4C21159A1400D4384D /* FrogLeavesRiverProblem.swift */,
 				4D904D4A211599FA00D4384D /* ArrayPermutationCheck.swift */,
+				DFB81AEC21229C700039AA9D /* FlipCards.swift */,
 			);
 			path = "Counting Elements";
 			sourceTree = "<group>";
@@ -210,6 +215,7 @@
 		4DF84426210B955D004AF932 /* Practice */ = {
 			isa = PBXGroup;
 			children = (
+				DFB81AE9212299CE0039AA9D /* Misc */,
 				4DCBFE0E211F08230031EFE7 /* Prime&Composite */,
 				4DCBFE07211ED5A20031EFE7 /* MaximumSlice */,
 				4DCBFE02211E9C6E0031EFE7 /* Leader */,
@@ -224,6 +230,14 @@
 				4DCBFE0C211EE2500031EFE7 /* BinaryTree.swift */,
 			);
 			path = Practice;
+			sourceTree = "<group>";
+		};
+		DFB81AE9212299CE0039AA9D /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				DFB81AEA21229A0A0039AA9D /* CitiesAndRoutes.swift */,
+			);
+			path = Misc;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,6 +310,7 @@
 				4D904D532116196D00D4384D /* PassingCars.swift in Sources */,
 				4DCBFE09211ED5B60031EFE7 /* MaximumShareProfit.swift in Sources */,
 				4D20635B211709C800AAF750 /* SORTDistinctValuesInArray.swift in Sources */,
+				DFB81AEB21229A0A0039AA9D /* CitiesAndRoutes.swift in Sources */,
 				4D904D512116194D00D4384D /* RangeDivisibleByNumber.swift in Sources */,
 				4DCBFE0B211ED8E00031EFE7 /* MaxSliceSum.swift in Sources */,
 				4D904D41211598AF00D4384D /* CyclicRotation.swift in Sources */,
@@ -309,6 +324,7 @@
 				4D904D3F2115987F00D4384D /* ITERBinaryGap.swift in Sources */,
 				4DF84428210B955D004AF932 /* main.swift in Sources */,
 				4D904D4F211607B700D4384D /* MaxCounters.swift in Sources */,
+				DFB81AED21229C700039AA9D /* FlipCards.swift in Sources */,
 				4DCBFE0D211EE2500031EFE7 /* BinaryTree.swift in Sources */,
 				4DCBFDFD211DF67B0031EFE7 /* Brackets.swift in Sources */,
 				4DCBFDF8211BD50B0031EFE7 /* TriangleTriplet.swift in Sources */,

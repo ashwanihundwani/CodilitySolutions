@@ -395,13 +395,10 @@ public func solutiondsss(_ S : inout String) -> Int {
     return 0
 }
 
-var A:[Int] = [3, 2, 1, 6, 5]
-var B:[Int] = [4, 2, 1, 3, 3]
-
-public func solution(_ T : inout [Int]) -> [Int] {
+public func solution222(_ T : inout [Int]) -> [Int] {
     // write your code in Swift 3.0 (Linux)
-    var cities:[Int] = Array<Int>.init(repeating: 0, count: T.count - 1)
-    cities.reserveCapacity(T.count - 1)
+    var distances:[Int] = Array<Int>.init(repeating: 0, count: T.count - 1)
+    distances.reserveCapacity(T.count - 1)
     var capitalIndex = -1
     
     for i in 0...T.count {
@@ -411,37 +408,84 @@ public func solution(_ T : inout [Int]) -> [Int] {
         }
     }
     
+    // No capital found, return distances
     if capitalIndex == -1 {
-        return cities
+        return distances
     }
     
-    var index = 0
-    for item in T {
-        if T[index] == item {
+    for index in 0...T.count - 1 {
+        if T[index] == index {
             continue
         }
         var distance = 1
-        var tempItem = item
-        while  tempItem != T[capitalIndex] {
-            tempItem = T[tempItem]
+        var temp = T[index]
+        while temp != T[capitalIndex] {
+            temp = T[temp]
             distance += 1
         }
         
-        if distance > 0 {
-            cities[distance - 1] += 1
-            distance = 0
-        }
-        
-        index += 1
+        distances[distance - 1] += 1
+        distance = 1
     }
     
-    return cities
+    return distances
     
 }
 
 
-var C:[Int] = [9, 1, 4, 9, 0, 4, 8, 9, 0, 1]
-print(solution(&C))
+public func solution(_ A : inout [Int], _ B : inout [Int]) -> Int {
+    // write your code in Swift 3.0 (Linux)
+    var totalSwaps = 0
+    var previousInA = 0
+    var previousInB:Int = 0
+    
+    for i in 0...A.count - 1 {
+        if i == 0 && (A[i] >= A[i + 1] || B[i] >= B[i + 1]) {
+            if A[i] < B[i + 1] && B[i] < A[i + 1] {
+                let temp = A[i]
+                A[i] = B[i]
+                B[i] = temp
+                totalSwaps += 1
+                previousInA = A[i]
+                previousInB = B[i]
+                continue
+            }
+            else {
+                return -1
+            }
+        }
+        else if (A[i] > previousInA && B[i] > previousInB) || A[i] == B[i]{
+            previousInA = A[i]
+            previousInB = B[i]
+            continue
+        }
+        else if A[i] <= previousInA || B[i] <= previousInB {
+            if A[i] > previousInB && B[i] > previousInA {
+                let temp = A[i]
+                A[i] = B[i]
+                B[i] = temp
+                totalSwaps += 1
+            }
+            else {
+                return -1
+            }
+        }
+        
+        previousInA = A[i]
+        previousInB = B[i]
+    }
+    
+    return totalSwaps
+}
+
+var A = [5, 3, 7, 7, 10]
+var B = [1, 6, 6, 9, 9]
+
+//var C:[Int] = [9, 1, 4, 9, 0, 4, 8, 9, 0, 1]
+print(solution(&A, &B))
+
+print(A)
+print(B)
 
 
 
